@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CH3RRY DESAPEGOS — seu armário virtual. Garimpe seu próximo xodó.">
+  <title>CH3RRY DESAPEGOS 🍒</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sparkles" aria-hidden="true">✦　✧　✦　⋆　✧　✦　⋆</div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="CH3RRY DESAPEGOS">CH3RRY<br><span>DESAPEGOS</span></a>
+    <button class="menu-btn" aria-label="Abrir menu">☰</button>
+    <nav id="main-nav">
+      <a href="#paty">Estilo Paty</a>
+      <a href="#baddie">Estilo Baddie</a>
+      <a href="#casual">Estilo Casual</a>
+      <a href="#mistura">Mistura de Estilos</a>
+      <a href="#entrega">Entrega / retirada</a>
+      <a href="#sugestoes">Sugestões</a>
+      <a href="#ia">🤖 Por que usamos IA?</a>
+      <a href="#chat">💬 Ch3rryzinha</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-copy">
+        <div class="sticker">♡ BEM-VINDA AO SEU ARMÁRIO VIRTUAL ♡</div>
+        <h1>Seu armário<br><em>virtual.</em></h1>
+        <p class="tagline">Garimpe seu próximo xodó.</p>
+        <p class="intro">Peças cheias de personalidade para você montar looks com a sua cara.</p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#catalogo">GARIMPAR AGORA ✦</a>
+          <a class="btn secondary" href="#chat">FALAR COM A CH3RRYZINHA 🐆</a>
+        </div>
+      </div>
+      <div class="mascot-card">
+        <div class="chrome">★ ONLINE ★</div>
+        <div class="mascot">🐆</div>
+        <div class="speech">Oi, bestie!<br>Eu sou a<br><strong>Ch3rryzinha!</strong> 🍒</div>
+      </div>
+    </section>
+
+    <section class="marquee"><span>✦ VIVA A VIDA ESTILOSA ✦ G A R I M P E ✦ PEÇAS CHEIAS DE PERSONALIDADE ✦ VIVA A VIDA ESTILOSA ✦</span></section>
+
+    <section id="catalogo" class="section">
+      <div class="section-title">
+        <p class="eyebrow">♡ GARIMPO ONLINE ♡</p>
+        <h2>Encontre seu próximo xodó</h2>
+        <p>Escolha uma vibe para ver as peças. Os produtos abaixo são exemplos — você pode trocar tudo pelo seu catálogo.</p>
+      </div>
+
+      <div class="condition-tabs" role="tablist" aria-label="Condição das peças">
+        <button class="condition-tab active" data-condition="Todos">Todas as peças ♡</button>
+        <button class="condition-tab" data-condition="Usadas">Usadas</button>
+        <button class="condition-tab" data-condition="Semi novas">Semi novas</button>
+        <button class="condition-tab" data-condition="Nunca usadas">Nunca usadas</button>
+      </div>
+
+      <div class="style-tabs" role="tablist" aria-label="Estilos">
+        <button class="style-tab active" data-style="Todos">Todos os estilos</button>
+        <button class="style-tab" data-style="Paty">Estilo Paty</button>
+        <button class="style-tab" data-style="Baddie">Estilo Baddie</button>
+        <button class="style-tab" data-style="Casual">Estilo Casual</button>
+        <button class="style-tab" data-style="Mistura">Mistura de Estilos</button>
+      </div>
+
+      <div id="products" class="product-grid"></div>
+
+      <div class="catalog-manager-card">
+        <div>
+          <p class="eyebrow">🍒 DONA DO GARIMPO</p>
+          <h2>Adicionar uma nova peça</h2>
+          <p>Coloque foto, preço, condição e estilo. O catálogo fica salvo neste navegador.</p>
+        </div>
+        <button id="manage-toggle" class="btn primary" type="button">ADICIONAR / GERENCIAR PEÇAS ✦</button>
+      </div>
+
+      <div id="manage-panel" class="manage-panel">
+        <form id="product-form" class="product-form">
+          <div class="form-heading"><span>📸</span><div><h3>Nova peça</h3><p>Preencha e ela aparece no catálogo na hora.</p></div></div>
+          <label>Foto da roupa <input id="product-photo" type="file" accept="image/*"></label>
+          <img id="photo-preview" class="photo-preview" alt="Prévia da roupa" hidden>
+          <div class="form-grid">
+            <label>Nome da peça <input id="product-name" required placeholder="Ex.: Vestido cerejinha"></label>
+            <label>Preço <input id="product-price" required placeholder="Ex.: R$ 45,00"></label>
+            <label>Condição <select id="product-condition"><option>Usadas</option><option>Semi novas</option><option>Nunca usadas</option></select></label>
+            <label>Estilo <select id="product-style"><option value="Paty">Estilo Paty</option><option value="Baddie">Estilo Baddie</option><option value="Casual">Estilo Casual</option><option value="Mistura">Mistura de Estilos</option></select></label>
+            <label>Emoji (se não tiver foto) <input id="product-emoji" placeholder="👗"></label>
+          </div>
+          <button class="btn primary" type="submit">SALVAR PEÇA 🍒</button>
+          <p id="add-result" class="form-result"></p>
+        </form>
+        <div class="manage-tools">
+          <div class="manage-tools-head"><h3>Peças cadastradas</h3><div><button id="export-catalog" type="button">EXPORTAR CATÁLOGO</button><button id="reset-catalog" type="button">RESETAR EXEMPLOS</button></div></div>
+          <div id="manage-list"></div>
+          <p class="manager-note">💡 As fotos adicionadas pelo formulário ficam armazenadas neste navegador. Se você quiser publicar as novas peças para todas as pessoas que acessarem o site, exporte o catálogo e use-o para atualizar a versão publicada.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div>“</div>
+      <h2>Viva a vida estilosa.</h2>
+      <p>Porque roupa boa é aquela que encontra uma nova história. ♡</p>
+    </section>
+
+    <section id="entrega" class="section info-grid">
+      <article class="info-card">
+        <span class="big-icon">🛵</span>
+        <p class="eyebrow">ENTREGA</p>
+        <h2>Na nossa cidade ♡</h2>
+        <p>Fazemos entrega/combinação de entrega em <strong>Campo Maior, Piauí</strong>.</p>
+      </article>
+      <article class="info-card">
+        <span class="big-icon">📍</span>
+        <p class="eyebrow">RETIRADA</p>
+        <h2>Combinadinho</h2>
+        <p>Se preferir retirar, fale com a gente pelo WhatsApp para combinar os detalhes.</p>
+      </article>
+      <article class="info-card warning">
+        <span class="big-icon">♡</span>
+        <p class="eyebrow">IMPORTANTE</p>
+        <h2>Somente Campo Maior</h2>
+        <p><strong>Não enviamos para fora da cidade.</strong> Atendemos somente nossa cidade, Campo Maior — Piauí.</p>
+      </article>
+    </section>
+
+    <section id="sugestoes" class="section suggestion">
+      <div>
+        <p class="eyebrow">💌 CAIXINHA DE IDEIAS</p>
+        <h2>Quer pedir alguma peça?</h2>
+        <p>Conta para a gente o que você gostaria de encontrar no bazar. A Ch3rryzinha também pode te orientar.</p>
+      </div>
+      <a class="btn primary" target="_blank" rel="noopener" href="https://wa.me/qr/SQVBC7DEONRAC1">MANDAR SUGESTÃO</a>
+    </section>
+
+    <section id="ia" class="section ai-section">
+      <div class="section-title">
+        <p class="eyebrow">🤖 BASTIDORES DO GARIMPO ♡</p>
+        <h2>Por que utilizamos IA em nosso garimpos?</h2>
+        <p>Uma explicação da dona da CH3RRY DESAPEGOS sobre como a inteligência artificial faz parte do seu mundinho de conhecimento.</p>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-icon">💻🍒</div>
+        <div>
+          <p>A dona deste garimpo gosta de trabalhar utilizando os conhecimentos de <strong>Inteligência Artificial</strong> que adquiriu em seu curso técnico de <strong>Desenvolvimento de Sistemas</strong>.</p>
+          <p>Não é por preguiça! É porque ela ama explorar essa área, aprender e colocar esse conhecimento em prática para deixar o garimpo cada vez mais criativo. ✨</p>
+          <blockquote>“Eu amo mecher com isso pessoal, esse é meu mundinho de conhecimento”</blockquote>
+          <p class="ai-signoff">Beijos, ch3rrys! 🍒🐆💋</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="chat" class="section chat-section">
+      <div class="section-title">
+        <p class="eyebrow">🐆 CHAT DO BAZAR</p>
+        <h2>Converse com a Ch3rryzinha</h2>
+        <p>Uma ajudante virtual para explicar como comprar, estilos, entrega e dúvidas comuns.</p>
+      </div>
+
+      <div class="chat-window">
+        <div class="chat-head">
+          <div class="mini-mascot">🐆</div>
+          <div><strong>Ch3rryzinha</strong><small>online agora ♡</small></div>
+        </div>
+        <div id="chat-messages" class="messages">
+          <div class="msg bot">Oii! 🍒 Sou a Ch3rryzinha! Posso te ajudar a comprar, escolher um estilo ou entender como funciona a entrega. O que você quer saber?</div>
+        </div>
+        <div class="quick-actions">
+          <button data-question="Como comprar?">Como comprar?</button>
+          <button data-question="Como funciona a entrega?">Entrega?</button>
+          <button data-question="Quais estilos vocês têm?">Estilos?</button>
+          <button data-question="Quero ver as peças.">Ver peças</button>
+        </div>
+        <form id="chat-form" class="chat-form">
+          <input id="chat-input" autocomplete="off" placeholder="Digite sua dúvida..." aria-label="Digite sua dúvida">
+          <button type="submit">ENVIAR ✦</button>
+        </form>
+        <p class="chat-note">Para atendimento real ou para comprar uma peça, use o WhatsApp. A Ch3rryzinha é uma assistente do site.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>CH3RRY DESAPEGOS 🍒</strong>
+      <p>Seu armário virtual • Campo Maior, Piauí</p>
+    </div>
+    <div class="socials">
+      <a target="_blank" rel="noopener" href="https://wa.me/qr/SQVBC7DEONRAC1">WhatsApp</a>
+      <a target="_blank" rel="noopener" href="https://www.instagram.com/ch3rrydesapego?stkn=MzZhbjU3MW1iYWdl&utm_source=qr">Instagram</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

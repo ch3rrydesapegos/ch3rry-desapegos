@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fredoka:wght@400;500;600;700&family=Press+Start+2P&display=swap');
+
+:root{
+  --wine:#65132d; --wine2:#8e2145; --deep:#270913; --pink:#f3b9cf;
+  --pink2:#ffdce9; --cream:#fff8f2; --silver:#dfe1e8; --white:#fff;
+  --shadow:5px 5px 0 var(--deep);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--deep);font-family:Fredoka,system-ui,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(var(--wine) 1px,transparent 1px);background-size:14px 14px;z-index:-1}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.topbar{position:sticky;top:0;z-index:20;background:var(--wine);color:#fff;border-bottom:4px solid var(--deep);box-shadow:0 4px 0 rgba(39,9,19,.2)}
+.topbar nav{max-width:1200px;margin:auto;display:flex;gap:5px;justify-content:center;flex-wrap:wrap;padding:10px 14px}
+.brand{position:absolute;left:18px;top:7px;font-family:'Press Start 2P';font-size:11px;line-height:1.35;letter-spacing:-1px;z-index:2}
+.brand span{font-size:8px;color:var(--pink)}
+nav a{font-family:'DM Mono',monospace;font-size:11px;padding:8px 9px;border:1px solid transparent}
+nav a:hover{background:var(--pink);color:var(--deep);border-color:var(--deep)}
+.menu-btn{display:none}
+.sparkles{position:fixed;top:100px;right:3%;font-size:24px;color:var(--wine2);opacity:.55;z-index:-1}
+.hero{max-width:1200px;margin:auto;min-height:650px;padding:90px 30px 70px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:50px}
+.sticker,.eyebrow{font-family:'DM Mono',monospace;font-weight:500;letter-spacing:1px;font-size:12px}
+.sticker{display:inline-block;background:var(--pink);border:2px solid var(--deep);padding:8px 12px;transform:rotate(-2deg);box-shadow:3px 3px 0 var(--deep)}
+h1{font-family:'Press Start 2P';font-size:clamp(35px,6vw,75px);line-height:1.18;margin:25px 0 15px;color:var(--wine)}
+h1 em{font-style:normal;color:var(--deep)}
+.tagline{font-size:30px;font-weight:700;margin:0 0 10px}
+.intro{font-size:19px;max-width:570px;line-height:1.5}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.btn{display:inline-block;border:2px solid var(--deep);padding:13px 17px;font-weight:700;box-shadow:var(--shadow);transition:.15s}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--deep)}
+.primary{background:var(--wine);color:#fff}.secondary{background:var(--pink)}
+.mascot-card{position:relative;background:#fff;border:3px solid var(--deep);box-shadow:10px 10px 0 var(--wine);padding:30px;text-align:center;transform:rotate(2deg)}
+.chrome{display:inline-block;background:linear-gradient(90deg,#aaa,#fff,#aaa);border:2px solid var(--deep);padding:6px 9px;font-family:'DM Mono';font-size:10px}
+.mascot{font-size:145px;filter:drop-shadow(4px 5px 0 var(--pink));margin:18px 0 5px}
+.speech{background:var(--pink2);border:2px solid var(--deep);padding:13px;font-size:18px}
+.speech strong{color:var(--wine)}
+.marquee{overflow:hidden;background:var(--deep);color:var(--pink);border-block:3px solid var(--deep);padding:13px 0;white-space:nowrap;font-family:'DM Mono';font-size:12px}
+.marquee span{display:inline-block;animation:scroll 18s linear infinite}
+@keyframes scroll{to{transform:translateX(-40%)}}
+.section{max-width:1200px;margin:auto;padding:85px 30px}
+.section-title{text-align:center;max-width:720px;margin:0 auto 30px}
+.section-title h2,.quote-section h2,.suggestion h2{font-size:38px;color:var(--wine);margin:8px 0}
+.section-title p:last-child{font-size:17px;line-height:1.5}
+.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:25px 0 35px}
+.filter,.quick-actions button{background:#fff;border:2px solid var(--deep);padding:9px 13px;cursor:pointer;box-shadow:3px 3px 0 var(--deep)}
+.filter.active,.filter:hover{background:var(--wine);color:#fff}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product{background:#fff;border:2px solid var(--deep);box-shadow:5px 5px 0 var(--deep);overflow:hidden}
+.product-img{height:210px;background:linear-gradient(135deg,var(--pink2),var(--silver));display:grid;place-items:center;font-size:72px;position:relative}
+.product-img span{position:absolute;top:8px;left:8px;background:var(--wine);color:#fff;font:10px 'DM Mono';padding:5px}
+.product-info{padding:15px}
+.product-info h3{margin:0 0 4px;font-size:19px}
+.product-info p{margin:4px 0;color:#62434c}
+.price{font-size:21px;font-weight:700;color:var(--wine);margin-top:10px}
+.buy{display:block;text-align:center;background:var(--pink);border:2px solid var(--deep);padding:8px;margin-top:12px;font-weight:700}
+.quote-section{background:var(--wine);color:#fff;text-align:center;padding:80px 20px;border-block:4px solid var(--deep)}
+.quote-section>div{font:70px Georgia;color:var(--pink);height:55px}.quote-section h2{color:#fff}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.info-card{background:#fff;border:2px solid var(--deep);box-shadow:5px 5px 0 var(--deep);padding:28px}
+.info-card h2{color:var(--wine);margin:8px 0}.big-icon{font-size:45px}.warning{background:var(--pink2)}
+.suggestion{display:flex;justify-content:space-between;align-items:center;gap:30px;background:var(--pink);border:3px solid var(--deep);box-shadow:7px 7px 0 var(--deep);margin-bottom:80px}
+.chat-section{padding-top:20px}
+.chat-window{max-width:700px;margin:auto;background:#fff;border:3px solid var(--deep);box-shadow:8px 8px 0 var(--wine)}
+.chat-head{display:flex;gap:12px;align-items:center;background:var(--wine);color:#fff;padding:14px 18px}
+.mini-mascot{font-size:35px;background:#fff;border-radius:50%;padding:4px}
+.chat-head small{display:block;color:var(--pink)}
+.messages{height:310px;overflow:auto;padding:18px;background:#fffaf7}
+.msg{max-width:78%;padding:10px 13px;margin:8px 0;border:2px solid var(--deep);line-height:1.4}
+.bot{background:var(--pink2);border-radius:3px 13px 13px 13px}
+.user{margin-left:auto;background:#fff;border-radius:13px 3px 13px 13px}
+.quick-actions{display:flex;flex-wrap:wrap;gap:7px;padding:10px;border-top:2px solid var(--deep)}
+.quick-actions button{font-size:12px;padding:7px}
+.chat-form{display:flex;border-top:2px solid var(--deep)}
+.chat-form input{min-width:0;flex:1;border:0;padding:14px;outline:0;background:#fff}
+.chat-form button{border:0;background:var(--wine);color:#fff;padding:0 16px;font-weight:700}
+.chat-note{font:10px 'DM Mono';padding:0 14px 12px;color:#74545e}
+footer{background:var(--deep);color:#fff;padding:40px max(30px,calc((100% - 1140px)/2));display:flex;justify-content:space-between;gap:20px}
+footer strong{font-family:'Press Start 2P';font-size:12px}footer p{color:var(--pink)}
+.socials{display:flex;gap:12px;align-items:center}.socials a{border:1px solid var(--pink);padding:8px 11px;color:var(--pink)}
+@media(max-width:900px){
+  .brand{position:static;display:block;padding:10px 15px}.topbar{display:flex;align-items:center;justify-content:space-between}.menu-btn{display:block;background:transparent;border:0;color:#fff;font-size:25px;margin-right:12px}.topbar nav{display:none;width:100%;padding:5px 12px}.topbar nav.open{display:flex}
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:60px}.mascot-card{max-width:430px;margin:auto}
+  .product-grid{grid-template-columns:repeat(2,1fr)}.info-grid{grid-template-columns:1fr}.suggestion{margin-inline:20px}
+}
+@media(max-width:560px){
+  h1{font-size:30px}.tagline{font-size:24px}.hero{padding-inline:18px}.section{padding-inline:18px}
+  .product-grid{grid-template-columns:1fr}.product-img{height:240px}.suggestion{display:block;padding:24px}.suggestion .btn{margin-top:15px}
+  footer{display:block;padding:35px 20px}.socials{margin-top:20px;flex-wrap:wrap}
+}
+
+
+/* Aba: Por que utilizamos IA? */
+.ai-section {
+  position: relative;
+}
+
+.ai-card {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 2rem;
+  border: 2px solid rgba(255,255,255,.7);
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(112,16,48,.95), rgba(48,8,27,.96));
+  box-shadow: 0 18px 50px rgba(0,0,0,.18), inset 0 0 0 1px rgba(255,255,255,.08);
+}
+
+.ai-icon {
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: rgba(255,255,255,.12);
+  font-size: 2.2rem;
+  transform: rotate(-3deg);
+}
+
+.ai-card p {
+  margin-top: 0;
+}
+
+.ai-card blockquote {
+  margin: 1.25rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid currentColor;
+  border-radius: 0 16px 16px 0;
+  background: rgba(255,255,255,.08);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.ai-signoff {
+  font-weight: 800;
+}
+
+@media (max-width: 700px) {
+  .ai-card {
+    grid-template-columns: 1fr;
+    padding: 1.35rem;
+  }
+  .ai-icon {
+    width: 72px;
+    height: 72px;
+    font-size: 1.8rem;
+  }
+}
+
+/* Abas de condição + estilo do catálogo */
+.condition-tabs, .style-tabs { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:18px auto; }
+.condition-tab, .style-tab { border:2px solid currentColor; background:rgba(255,255,255,.7); padding:11px 16px; border-radius:999px; font:inherit; font-weight:800; cursor:pointer; transition:.2s ease; }
+.condition-tab.active, .style-tab.active, .condition-tab:hover, .style-tab:hover { transform:translateY(-2px); box-shadow:4px 4px 0 rgba(80,0,35,.18); }
+.condition-tabs { margin-bottom:8px; }
+.style-tabs { margin-top:8px; }
+
+/* ===== Gerenciador de peças ===== */
+.catalog-manager-card{margin:38px 0 0;padding:28px;border:2px solid rgba(126,12,53,.25);border-radius:26px;background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,225,240,.75));display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 14px 35px rgba(77,0,34,.08)}
+.catalog-manager-card h2{margin:4px 0 6px}.catalog-manager-card p{margin:0;max-width:620px}.manage-panel{display:none;margin-top:18px;padding:28px;border-radius:28px;background:#fff7fb;border:2px dashed rgba(126,12,53,.35)}.manage-panel.show{display:grid;gap:28px}.product-form{padding:24px;border-radius:22px;background:white;box-shadow:0 10px 30px rgba(77,0,34,.08)}.form-heading{display:flex;gap:14px;align-items:center;margin-bottom:18px}.form-heading>span{font-size:32px}.form-heading h3{margin:0}.form-heading p{margin:3px 0 0}.product-form label{display:grid;gap:7px;font-weight:700;margin:12px 0}.product-form input,.product-form select{font:inherit;border:1px solid #d9a8bd;border-radius:12px;padding:12px;background:#fff}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}.photo-preview{display:block;width:min(260px,100%);max-height:300px;object-fit:cover;border-radius:16px;margin:10px 0;border:2px solid #efb5ce}.form-result{min-height:1.3em;font-weight:700}.manage-tools{background:white;padding:24px;border-radius:22px}.manage-tools-head{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}.manage-tools-head h3{margin:0}.manage-tools-head button{font:inherit;font-size:11px;font-weight:800;border:1px solid #b16b89;border-radius:10px;background:white;padding:9px 11px;margin:3px;cursor:pointer}.manage-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #efd9e3}.manage-row span{display:grid;gap:3px}.manage-row small{opacity:.7}.delete-product{border:0;border-radius:10px;padding:8px 10px;background:#ffe0ea;color:#7b123f;font-weight:800;cursor:pointer}.manager-note{font-size:13px;opacity:.75;margin:18px 0 0}.empty-products{grid-column:1/-1;padding:35px;text-align:center;border:2px dashed #d8a0b8;border-radius:20px;background:#fff6fa}
+.product-img{display:block;width:100%;height:290px;object-fit:cover;background:linear-gradient(135deg,#fff0f6,#f6d5e3);border-radius:18px 18px 0 0}.product-img:not(img){display:flex;align-items:center;justify-content:center;font-size:70px;position:relative}.product-img span{position:absolute;top:12px;left:12px;font-size:11px;letter-spacing:.08em;background:#7b123f;color:white;border-radius:999px;padding:7px 10px}
+@media(max-width:700px){.catalog-manager-card{display:block}.catalog-manager-card .btn{margin-top:16px;width:100%}.form-grid{grid-template-columns:1fr}.manage-panel{padding:16px}.product-img{height:240px}}
