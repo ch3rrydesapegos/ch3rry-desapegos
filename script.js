@@ -53,7 +53,7 @@ document.querySelectorAll(".style-tab").forEach(btn=>btn.addEventListener("click
 }));
 
 const menu=document.querySelector(".menu-btn"), nav=document.querySelector("#main-nav");
-menu.addEventListener("click",()=>nav.classList.toggle("
+menu.addEventListener("click",()=>nav.classList.toggle("open"));
 
 const answers = [
   [/como comprar|comprar|quero essa/i, "É facinho! 🍒 Escolha a peça, clique em “QUERO ESSA ♡” e fale com a gente pelo WhatsApp. Aí combinamos disponibilidade, pagamento e entrega/retirada em Campo Maior."],
