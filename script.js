@@ -53,58 +53,7 @@ document.querySelectorAll(".style-tab").forEach(btn=>btn.addEventListener("click
 }));
 
 const menu=document.querySelector(".menu-btn"), nav=document.querySelector("#main-nav");
-menu.addEventListener("click",()=>nav.classList.toggle("open"));
-
-// ===== Painel para adicionar peças =====
-const form=document.querySelector("#product-form");
-const photoInput=document.querySelector("#product-photo");
-const preview=document.querySelector("#photo-preview");
-photoInput.addEventListener("change",()=>{
-  const file=photoInput.files[0];
-  if(!file){ preview.hidden=true; return; }
-  const reader=new FileReader(); reader.onload=e=>{ preview.src=e.target.result; preview.hidden=false; }; reader.readAsDataURL(file);
-});
-
-form.addEventListener("submit", e=>{
-  e.preventDefault();
-  const name=document.querySelector("#product-name").value.trim();
-  const price=document.querySelector("#product-price").value.trim();
-  const condition=document.querySelector("#product-condition").value;
-  const style=document.querySelector("#product-style").value;
-  const emoji=document.querySelector("#product-emoji").value.trim() || "👗";
-  const file=photoInput.files[0];
-  const finish=image=>{
-    products.unshift({id:crypto.randomUUID(),name,price,condition,style,emoji,image,whatsappText:`Oi! Quero saber sobre a ${name}.`});
-    saveProducts(); rerender(); form.reset(); preview.hidden=true;
-    document.querySelector("#add-result").textContent="✨ Peça adicionada ao seu garimpo!";
-  };
-  if(file){ const reader=new FileReader(); reader.onload=e=>finish(e.target.result); reader.readAsDataURL(file); }
-  else finish("");
-});
-
-function renderManageList(){
-  const list=document.querySelector("#manage-list"); list.innerHTML="";
-  products.forEach(p=>{
-    const row=document.createElement("div"); row.className="manage-row";
-    row.innerHTML=`<span>${p.image ? "📷" : (p.emoji||"👗")} <strong>${p.name}</strong><small>${p.condition} • ${p.style}</small></span><button data-id="${p.id}" class="delete-product">EXCLUIR</button>`;
-    list.appendChild(row);
-  });
-  list.querySelectorAll(".delete-product").forEach(btn=>btn.addEventListener("click",()=>{
-    products=products.filter(p=>p.id!==btn.dataset.id); saveProducts(); renderManageList(); rerender();
-  }));
-}
-
-document.querySelector("#manage-toggle").addEventListener("click",()=>{
-  const panel=document.querySelector("#manage-panel"); panel.classList.toggle("show");
-  if(panel.classList.contains("show")) renderManageList();
-});
-document.querySelector("#reset-catalog").addEventListener("click",()=>{
-  if(confirm("Voltar para as peças de exemplo? As peças adicionadas neste navegador serão apagadas.")){ products=defaultProducts; saveProducts(); renderManageList(); rerender(); }
-});
-document.querySelector("#export-catalog").addEventListener("click",()=>{
-  const blob=new Blob([JSON.stringify(products,null,2)],{type:"application/json"});
-  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="ch3rry-catalogo.json"; a.click(); URL.revokeObjectURL(a.href);
-});
+menu.addEventListener("click",()=>nav.classList.toggle("
 
 const answers = [
   [/como comprar|comprar|quero essa/i, "É facinho! 🍒 Escolha a peça, clique em “QUERO ESSA ♡” e fale com a gente pelo WhatsApp. Aí combinamos disponibilidade, pagamento e entrega/retirada em Campo Maior."],
